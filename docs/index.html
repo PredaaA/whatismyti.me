@@ -155,31 +155,16 @@
         </div>
     </main>
     <script>
-        // Don't look too close to my shitty js okay :kappa:
+        function _valueWithPad(value) {
+            return `${value}`.padStart(2, '0');
+        }
         function getDateTime() {
-            var now = new Date();
-            var year = now.getFullYear();
-            var month = now.getMonth() + 1;
-            var day = now.getDate();
-            var hour = now.getHours();
-            var minute = now.getMinutes();
-            var second = now.getSeconds();
-            if (month.toString().length == 1) {
-                month = '0' + month;
-            }
-            if (day.toString().length == 1) {
-                day = '0' + day;
-            }
-            if (hour.toString().length == 1) {
-                hour = '0' + hour;
-            }
-            if (minute.toString().length == 1) {
-                minute = '0' + minute;
-            }
-            if (second.toString().length == 1) {
-                second = '0' + second;
-            }
-            return [`${hour}:${minute}:${second} (${year}/${month}/${day})`, hour > 7 && hour < 20];
+            // Thanks Thunder
+            var now = new Date(), hNum = now.getHours(), h = _valueWithPad(hNum);
+            return [
+                `${h}:${_valueWithPad(now.getMinutes())}:${_valueWithPad(now.getSeconds())} (${_valueWithPad(now.getFullYear())}/${_valueWithPad(now.getMonth() + 1)}/${_valueWithPad(now.getDate())})`,
+                hNum > 7 && hNum < 20
+            ]
         }
 
         function getTimeEmoji(isDay) {
