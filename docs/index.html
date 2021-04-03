@@ -160,7 +160,7 @@
         }
         function getDateTime() {
             // Thanks Thunder
-            var now = new Date(), hNum = now.getHours(), h = _valueWithPad(hNum);
+            const now = new Date(), hNum = now.getHours(), h = _valueWithPad(hNum);
             return [
                 `${h}:${_valueWithPad(now.getMinutes())}:${_valueWithPad(now.getSeconds())} (${_valueWithPad(now.getFullYear())}/${_valueWithPad(now.getMonth() + 1)}/${_valueWithPad(now.getDate())})`,
                 hNum > 7 && hNum < 20
@@ -184,7 +184,7 @@
         }
 
         function copyToClipboard(element) {
-            var query = document.querySelector(element);
+            const query = document.querySelector(element);
             navigator.clipboard.writeText(query.textContent);
             showToast('Copied to clipboard! 🎉');
         }
