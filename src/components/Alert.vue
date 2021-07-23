@@ -1,8 +1,12 @@
 <template>
   <div
     class="
-      bg-gray-700
-      border-t-4 border-teal-500
+      bg-gray-500
+      dark:bg-gray-700
+      text-gray-200
+      dark:text-current
+      border-l-4 border-gray-800
+      dark:border-gray-400
       fixed
       -top-0
       right-0
@@ -11,7 +15,6 @@
       md:w-full
       max-w-sm
       rounded-b
-      text-teal-900
       px-4
       py-3
       shadow-md

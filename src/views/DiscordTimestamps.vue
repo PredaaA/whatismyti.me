@@ -7,7 +7,7 @@
       <p>
         <abbr title="Click to copy to clipboard" class="cursor-pointer">
           <code
-            class="text-2xl bg-gray-600 p-1.5 rounded-md"
+            class="text-2xl bg-gray-400 dark:bg-gray-600 p-1.5 rounded-md"
             @click="copyToClipboard($event.target.textContent)"
           >
             &lt;t:{{ Math.round(data.selectedTime / 1000) }}:{{
@@ -18,7 +18,18 @@
       </p>
       <p class="text-2xl">{{ data.discordRendered }}</p>
     </div>
-    <div class="flex flex-col w-60 max-w-sm mx-auto bg-gray-700 p-4 rounded">
+    <div
+      class="
+        flex flex-col
+        w-60
+        max-w-sm
+        mx-auto
+        p-4
+        rounded
+        bg-gray-400
+        dark:bg-gray-600
+      "
+    >
       <label for="datetime-select">Datetime</label>
       <input
         class="mt-2 text-black bg-gray-300"
