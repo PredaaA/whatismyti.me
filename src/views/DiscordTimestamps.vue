@@ -32,13 +32,32 @@
     >
       <label for="datetime-select">Datetime</label>
       <input
+        v-if="!isFirefox()"
         class="mt-2 text-black bg-gray-300"
         id="datetime-select"
         type="datetime-local"
         step="1"
         name="pickedTime"
-        @input="updatePickedTime($event.target.value)"
+        @input="updatePickedDateTime($event.target.value)"
       />
+      <div v-else>
+        <input
+          class="mt-2 text-black bg-gray-300"
+          id="datetime-select"
+          type="date"
+          step="1"
+          name="pickedTime"
+          @input="updatePickedDate($event.target.value)"
+        />
+        <input
+          class="mt-2 text-black bg-gray-300"
+          id="datetime-select"
+          type="time"
+          step="1"
+          name="pickedTime"
+          @input="updatePickedTime($event.target.value)"
+        />
+      </div>
       <label for="style-select">Style</label>
       <select
         id="style-select"
@@ -72,8 +91,43 @@ const data = reactive({
   discordRendered: DateTime.now().toFormat("dd LLLL yyyy HH:mm"),
 });
 
+function isFirefox() {
+  return navigator.userAgent.indexOf("Firefox") > -1;
+}
+
+function updatePickedDateTime(pickedDateTime) {
+  if (pickedDateTime) {
+    data.selectedTime = new Date(pickedDateTime).getTime();
+  } else {
+    data.selectedTime = new Date().getTime();
+  }
+  updatePickedStyle(data.selectedStyle);
+}
+
+// Firefox doesn't support datetime-local, so it needs special stuff for it.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local
+// https://bugzilla.mozilla.org/show_bug.cgi?id=888320
+function updatePickedDate(pickedDate) {
+  if (pickedDate) {
+    data.selectedTime = new Date(pickedDate).getTime();
+  } else {
+    data.selectedTime = new Date().getTime();
+  }
+  updatePickedStyle(data.selectedStyle);
+}
 function updatePickedTime(pickedTime) {
-  data.selectedTime = new Date(pickedTime).getTime();
+  if (pickedTime) {
+    const hours = pickedTime.slice(0, 2),
+      minutes = pickedTime.slice(3, 5),
+      seconds = pickedTime.slice(6, 8);
+    data.selectedTime = new Date(data.selectedTime).setHours(
+      hours,
+      minutes,
+      seconds
+    );
+  } else {
+    data.selectedTime = new Date().getTime();
+  }
   updatePickedStyle(data.selectedStyle);
 }
 
