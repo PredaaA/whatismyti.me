@@ -105,6 +105,3 @@ function copyToClipboard(content) {
   // alert("Copied to clipboard! 🎉");
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
