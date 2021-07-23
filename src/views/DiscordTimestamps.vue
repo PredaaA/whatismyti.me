@@ -102,6 +102,5 @@ function copyToClipboard(content) {
   setTimeout(() => {
     data.alertVisible = false;
   }, 3000);
-  // alert("Copied to clipboard! 🎉");
 }
 </script>
