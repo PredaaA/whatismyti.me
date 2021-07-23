@@ -5,10 +5,12 @@ import './index.css'
 
 import Home from './views/Home.vue'
 import DiscordTimestamps from './views/DiscordTimestamps.vue'
+import NotFound from './views/NotFound.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/discordtimestamp', component: DiscordTimestamps },
+  { path: '/discordtimestamps', component: DiscordTimestamps },
+  { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 const router = createRouter({
   history: createWebHistory(),

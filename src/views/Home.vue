@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div>
     <span class="text-5xl font-bold">
       <p>
         It is
@@ -24,15 +24,20 @@
         timezone
       </p>
     </span>
-    <div id="thetoast"></div>
+    <div v-if="data.alertVisible">
+      <Alert :title="data.alertTitle" />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { reactive } from "vue";
+import Alert from "../components/Alert.vue";
 
 const datetime = getDateTime();
 const data = reactive({
+  alertVisible: false,
+  alertTitle: null,
   userTime: datetime[0],
   userTimeEmoji: datetime[1] ? "☀️" : "🌑",
   userTZ: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -56,19 +61,14 @@ function getDateTime() {
   ];
 }
 
-function showToast(text) {
-  var toast = document.getElementById("thetoast");
-  toast.className = "show";
-  toast.innerHTML = text;
-  setTimeout(function () {
-    toast.className = toast.className.replace("show", "");
-  }, 3000);
-}
-
 function copyToClipboard(element) {
+  data.alertVisible = true;
+  data.alertTitle = "Copied to clipboard! 🎉";
   const query = document.querySelector(element);
   navigator.clipboard.writeText(query.textContent);
-  showToast("Copied to clipboard! 🎉");
+  setTimeout(() => {
+    data.alertVisible = false;
+  }, 3000);
 }
 
 function updateTime() {
@@ -78,83 +78,13 @@ function updateTime() {
   data.userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 
-// showToast("Click on underlined text to copy it to your clipboard! 👀");
+data.alertVisible = true;
+data.alertTitle = "Click on underlined text to copy it to your clipboard! 👀";
+setTimeout(() => {
+  data.alertVisible = false;
+}, 3000);
 
 setInterval(function () {
   updateTime();
 }, 1000);
 </script>
-
-<style lang="scss" scoped>
-/* *yawns at being css noobie* */
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_snackbar */
-#thetoast {
-  visibility: hidden;
-  width: 300px;
-  position: absolute;
-  bottom: 30px;
-  text-align: center;
-  border-radius: 4px;
-  background-color: #161616;
-  color: #fff;
-  font-size: 20px;
-  padding: 16px;
-  -webkit-box-shadow: 0px 0px 24px -1px #181818;
-  -moz-box-shadow: 0px 0px 24px -1px #181818;
-  box-shadow: 0px 0px 24px -1px #181818;
-}
-
-#thetoast.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-</style>
