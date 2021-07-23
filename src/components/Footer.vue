@@ -1,8 +1,7 @@
 <template>
-  <section class="bg-gray-700 text-gray-300">
+  <section class="bg-gray-700 text-gray-300 border-t-4 border-teal-500">
     <div
       class="
-        border-t-4 border-teal-500
         max-w-screen-xl
         px-4
         py-5
