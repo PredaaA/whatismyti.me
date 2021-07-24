@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="text-5xl font-bold">
+    <span class="text-xl md:text-5xl font-bold">
       <p>
         It is
         <abbr

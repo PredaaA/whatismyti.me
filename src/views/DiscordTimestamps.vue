@@ -1,13 +1,13 @@
 <template>
   <div class="space-y-7">
     <div>
-      <p class="text-5xl font-bold">Discord Timestamp Picker</p>
+      <p class="text-2xl md:text-5xl font-bold">Discord Timestamp Picker</p>
     </div>
     <div>
       <p>
         <abbr title="Click to copy to clipboard" class="cursor-pointer">
           <code
-            class="text-2xl bg-gray-400 dark:bg-gray-600 p-1.5 rounded-md"
+            class="md:text-2xl bg-gray-400 dark:bg-gray-600 p-1.5 rounded-md"
             @click="copyToClipboard($event.target.textContent)"
           >
             &lt;t:{{ Math.round(data.selectedTime / 1000) }}:{{
@@ -16,7 +16,7 @@
           </code>
         </abbr>
       </p>
-      <p class="text-2xl">{{ data.discordRendered }}</p>
+      <p class="md:text-2xl">{{ data.discordRendered }}</p>
     </div>
     <div
       class="
