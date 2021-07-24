@@ -21,16 +21,16 @@
     >
       <nav class="flex flex-wrap justify-center -mx-5 -my-5">
         <div class="px-5 py-2">
-          <router-link to="/" class="text-base leading-6 hover:text-gray-800">
-            Home
+          <router-link to="/" class="text-base leading-6"> Home </router-link>
+        </div>
+        <div class="px-5 py-2">
+          <router-link to="/discordtimestamps" class="text-base leading-6">
+            Discord Timestamps
           </router-link>
         </div>
         <div class="px-5 py-2">
-          <router-link
-            to="/discordtimestamps"
-            class="text-base leading-6 hover:text-gray-800"
-          >
-            Discord Timestamps
+          <router-link to="/privacy" class="text-base leading-6">
+            Privacy
           </router-link>
         </div>
 
@@ -39,7 +39,6 @@
             href="https://github.com/PredaaA/whatismyti.me"
             rel="noopener"
             target="_blank"
-            class="hover:text-gray-800"
           >
             <span class="sr-only">GitHub</span>
             <svg
@@ -98,11 +97,7 @@
       </nav>
       <p class="text-base leading-6 text-center">
         © 2021
-        <a
-          href="https://github.com/PredaaA"
-          rel="noopener"
-          target="_blank"
-          class="hover:text-gray-800"
+        <a href="https://github.com/PredaaA" rel="noopener" target="_blank"
           >PredaaA</a
         >
       </p>
