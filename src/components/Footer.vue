@@ -96,7 +96,7 @@
         </div>
       </nav>
       <p class="text-base leading-6 text-center">
-        © 2021
+        © 2021-present
         <a href="https://github.com/PredaaA" rel="noopener" target="_blank"
           >PredaaA</a
         >
