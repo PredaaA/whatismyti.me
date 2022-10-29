@@ -8,19 +8,19 @@
   },
   "dependencies": {
     "ackee-tracker": "^5.1.0",
-    "luxon": "^2.3.0",
-    "node-sass": "^7.0.1",
-    "sass-loader": "^12.6.0",
-    "vue": "^3.2.31",
-    "vue-router": "^4.0.12"
+    "luxon": "^3.0.4",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.1.0",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.2.2",
-    "@vue/compiler-sfc": "^3.2.31",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
-    "sass": "^1.49.8",
-    "tailwindcss": "^3.0.23",
-    "vite": "^2.8.4"
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/compiler-sfc": "^3.2.41",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "sass": "^1.55.0",
+    "tailwindcss": "^3.2.1",
+    "vite": "^3.2.1"
   }
 }
