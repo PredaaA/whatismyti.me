@@ -1,4 +1,5 @@
 import * as ackeeTracker from 'ackee-tracker';
+import { VueUmamiPlugin } from '@jaseeey/vue-umami-plugin';
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
@@ -25,4 +26,9 @@ const router = createRouter({
 
 const app = createApp(App)
 app.use(router)
+app.use(VueUmamiPlugin, {
+  websiteID: '006f30f8-02af-4b0a-8abf-1d0d23240abd',
+  scriptSrc: 'https://um.predamart.me/um.js',
+  router
+});
 app.mount('#app')

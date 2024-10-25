@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@jaseeey/vue-umami-plugin':
+        specifier: ^1.2.0
+        version: 1.2.0
       ackee-tracker:
         specifier: ^5.1.0
         version: 5.1.0
@@ -84,6 +87,9 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
+
+  '@jaseeey/vue-umami-plugin@1.2.0':
+    resolution: {integrity: sha512-ffQNSIKDv/hDglk6K/E17Ic/0xfs9+yPDOimFMVIf/gP9kv5MY5ZuK+pmNkEFlssUI6h4z3r9fccmXNI62rfrQ==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -1154,6 +1160,8 @@ snapshots:
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
+
+  '@jaseeey/vue-umami-plugin@1.2.0': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
