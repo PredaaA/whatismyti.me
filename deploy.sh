@@ -6,7 +6,7 @@ set -e
 rm -rf dist
 
 # build
-yarn build
+pnpm run build
 
 # navigate into the build output directory
 cd dist
