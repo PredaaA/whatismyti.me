@@ -11,7 +11,7 @@
     "luxon": "^3.5.0",
     "sass": "^1.80.6",
     "sass-loader": "^16.0.3",
-    "vue": "^3.5.12",
+    "vue": "^3.5.13",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
